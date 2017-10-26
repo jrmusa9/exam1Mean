@@ -1,0 +1,32 @@
+<h3>{{question.question}}</h3>
+<p>Click the "Vote" button to choose one</p>
+
+<table>
+    <tr>
+      <th>Option</th>
+      <th>Count of votes</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>{{question.option1.text}}</td>
+      <td>{{question.option1.score}}</td>
+      <td><button (click)='question.option1.score =question.option1.score + 1' >Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{question.option2.text}}</td>
+      <td>{{question.option2.score}}</td>
+      <td><button (click)='question.option2.score = question.option2.score + 1' >Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{question.option3.text}}</td>
+      <td>{{question.option3.score}}</td>
+      <td><button (click)='question.option3.score = question.option3.score + 1' >Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{question.option4.text}}</td>
+      <td>{{question.option4.score}}</td>
+      <td><button (click)='question.option4.score = question.option4.score + 1' >Vote</button></td>
+    </tr>
+</table>
+<br>
+<button (click)='goBackAndUpdate()'>Back</button>

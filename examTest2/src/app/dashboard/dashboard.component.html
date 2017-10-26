@@ -1,0 +1,20 @@
+<h3>Current Polls:</h3>
+<a [routerLink]="['/create', x]" *ngFor='let x of session'>Create a new poll</a>
+<a (click)='logOut()'>Log out</a>
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Survey Question</th>
+    <th>Date Posted</th>
+    <th>Action</th>
+  </tr>
+  <ng-container *ngFor='let i of questions'>
+    <tr  *ngFor='let user of allUsers'  >
+      <td *ngIf='i._userID == user._id'>{{user.name}}<td>
+      <td *ngIf='i._userID == user._id' ><a (click)='getOneQuestion(i._id)'>{{i.question}}</a></td>
+      <td *ngIf='i._userID == user._id'>{{i.createdAt | date:medium}}</td>
+      <td *ngIf='i._userID == user._id && i._userID == session[0]'><button (click)='destroy(i)'>Delete</button></td>
+    </tr>
+  </ng-container>
+</table>

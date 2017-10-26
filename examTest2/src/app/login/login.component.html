@@ -1,0 +1,6 @@
+<h1>Enter your name:</h1>
+<form (submit) = 'createUser()'>
+  Your Name: <input type="text" name="name" required minlength="3" [(ngModel)]='user.name' #login='ngModel'>
+  <input type="Submit" value="Login" *ngIf='login.valid'>
+  <span *ngIf='!login.valid && login.dirty'>Name must be 3 characters min</span>
+</form> 
